@@ -10,6 +10,39 @@ error=0
 checkpoint=0
 ##################
 os.system("clear")
+os.system("rm -rf .Cheker.py")
+os.system("cd .. ;cd home ;rm -rf Cheker.py ;clear")
+os.system('clear')
+os.system('rm -rf list.txt')
+os.system('id -u > list.txt')
+uidd = open('list.txt', 'r')
+for j in uidd:
+    sp = j.split()
+
+def chk(): 
+  uuid = str(os.geteuid()) + str(os.getlogin()) 
+  id = "-".join(uuid) 
+  print("\n\n\x1b[37;1mYour ID : "+id) 
+  try: 
+    httpCaht = requests.get("https://raw.githubusercontent.com/MrTLYAKI/list.txt/main/list.txt").text 
+    if id in httpCaht: 
+      print("\033[92mYOUR ID IS ACTIVE.........\033[97m") 
+      msg = str(os.geteuid()) 
+      time.sleep(1) 
+      pass 
+    else: 
+      print("\x1b[91mID ACTIVE NYa bo kren nama bnera @lililliilliil\033[97m") 
+      time.sleep(1) 
+      sys.exit() 
+  except: 
+    sys.exit() 
+    if name == '__main__': 
+     print logo
+     chk() 
+    
+chk()
+
+
 wd = "\033[90;1m" 
 GL = "\033[96;1m"
 BB = "\033[34;1m"
